@@ -1,0 +1,236 @@
+
+
+Python standard libraries and micro-libraries
+
+array
+ubinascii
+builtins
+cmath
+ucollections
+uerrno
+gc
+uhashlib
+uheapq
+uio
+ujson
+math
+uos
+urandom
+ure
+    TODO: select
+usocket
+    TODO: ssl
+ustruct
+sys
+utime
+    TODO: uasyncio
+uzlib
+_thread
+_webrepl
+
+
+
+MicroPython-specific libraries
+
+    TODO: bluetooth
+    TODO: btree
+ucryptolib
+    TODO: framebuf
+machine
+micropython
+    TODO: neopixel
+network
+uctypes
+utimeq
+
+
+Libraries specific to the CanMV Cam
+
+sensor
+image
+lcd
+
+audio
+video
+Maix
+modules
+nes
+
+
+Third-party libraries on the CanMV Cam
+
+ulab
+
+Built-in libraries on the CanMV Cam
+
+board
+fpioa_manager                
+
+
+
+
+
+
+
+Python standard libraries and micro-libraries
+
+array – arrays of numeric data
+binascii – binary/ASCII conversions
+builtins – builtin functions and exceptions
+cmath – mathematical functions for complex numbers
+collections – collection and container types
+errno – system error codes
+gc – control the garbage collector
+hashlib – hashing algorithms
+heapq – heap queue algorithm
+io – input/output streams
+json – JSON encoding and decoding
+math – mathematical functions
+os – basic “operating system” services
+random – generate random numbers
+re – simple regular expressions
+select – wait for events on a set of streams
+socket – socket module
+ssl – SSL/TLS module
+struct – pack and unpack primitive data types
+sys – system specific functions
+time – time related functions
+uasyncio — asynchronous I/O scheduler
+zlib – zlib decompression
+_thread – multithreading support
+
+MicroPython-specific libraries
+
+bluetooth — low-level Bluetooth
+btree – simple BTree database
+cryptolib – cryptographic ciphers
+framebuf — frame buffer manipulation
+machine — functions related to the hardware
+micropython – access and control MicroPython internals
+neopixel — control of WS2812 / NeoPixel LEDs
+network — network configuration
+uctypes – access binary data in a structured way
+
+
+Libraries specific to the OpenMV Cam
+The following libraries are specific to the OpenMV Cam.
+
+pyb — functions related to the board
+    Time related functions
+    Reset related functions
+    Interrupt related functions
+    Power related functions
+    Miscellaneous functions
+    Classes
+        class ADC – analog to digital conversion
+        class CAN – controller area network communication bus
+        class DAC – digital to analog conversion
+        class ExtInt – configure I/O pins to interrupt on external events
+        class Flash – access to built-in flash storage
+        class I2C – a two-wire serial protocol
+        class LED – LED object
+        class Pin – control I/O pins
+        class PinAF – Pin Alternate Functions
+        class RTC – real time clock
+        class Servo – 3-wire hobby servo driver
+        class SPI – a master-driven serial protocol
+        class Timer – control internal timers
+        class TimerChannel — setup a channel for a timer
+        class UART – duplex serial communication bus
+        class USB_HID – USB Human Interface Device (HID)
+        class USB_VCP – USB virtual comm port
+sensor — camera sensor
+    Functions
+    Constants
+image — machine vision
+    Functions
+    class HaarCascade – Feature Descriptor
+    class Histogram – Histogram Object
+    class Percentile – Percentile Object
+    class Threshold – Threshold Object
+    class Statistics – Statistics Object
+    class Blob – Blob object
+    class Line – Line object
+    class Circle – Circle object
+    class Rect – Rectangle Object
+    class QRCode – QRCode object
+    class AprilTag – AprilTag object
+    class DataMatrix – DataMatrix object
+    class BarCode – BarCode object
+    class Displacement – Displacement object
+    class kptmatch – Keypoint Object
+    class ImageIO – ImageIO Object
+    class Image – Image object
+    Constants
+tf — Tensor Flow
+    Functions
+    class tf_classification – tf classification dection result
+        Constructors
+        Methods
+    class tf_model – TensorFlow Model
+        Constructors
+        Methods
+gif — gif recording
+    class Gif – Gif recorder
+    Constructors
+    Methods
+mjpeg — mjpeg recording
+    class Mjpeg – Mjpeg recorder
+    Constructors
+    Methods
+audio — Audio Module
+    Functions
+micro_speech — Micro Speech Audio Module Example
+    Constructors
+lcd — lcd driver
+    Functions
+    Constants
+fir — thermal sensor driver (fir == far infrared)
+    Functions
+    Constants
+tv — tv shield driver
+    Functions
+    Constants
+cpufreq — CPU Frequency Control
+    Functions
+buzzer — buzzer driver
+    Functions
+    Constants
+imu — imu sensor
+    Functions
+rpc — rpc library
+    How to use the Library
+    class rpc - rpc virtual class
+        Constructors
+        Methods
+    class rpc_master - rpc_master virtual class
+        Constructors
+        Methods
+    class rpc_slave - rpc_slave virtual class
+        Constructors
+        Methods
+    class rpc_can_master - CAN Master Interface
+        Constructors
+    class rpc_can_slave - CAN Slave Interface
+        Constructors
+    class rpc_i2c_master - I2C Master Interface
+        Constructors
+    class rpc_i2c_slave - I2C Slave Interface
+        Constructors
+    class rpc_spi_master - SPI Master Interface
+        Constructors
+    class rpc_spi_slave - SPI Slave Interface
+    class rpc_uart_master - UART Master Interface
+    class rpc_uart_slave - UART Slave Interface
+    class rpc_usb_vcp_master - USB VCP Master Interface
+    class rpc_usb_vcp_slave - USB VCP Slave Interface
+    class rpc_wifi_master - WiFi Master Interface
+    class rpc_wifi_master - WiFi Master Interface
+rtsp — rtsp library
+    How to use the Library
+    class rtsp_server - rtsp_server class
+    Constructors
+    Methods
+omv — OpenMV Cam Information
+    Functions
+
