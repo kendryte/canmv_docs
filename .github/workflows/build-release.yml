@@ -1,0 +1,70 @@
+name: Build and Deploy Documents.
+
+on:
+  push:
+    tags: [ "v*" ]
+    branches: [ "main" ]
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install Requirements.
+      run: pip3 install sphinx sphinx_multiversion sphinx_rtd_theme myst-parser
+
+    - name: Build
+      run: |
+        make mhtml
+        tar -zcvf htmls.tar.gz build/**
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: "htmls-${{ github.sha }}"
+        path: htmls.tar.gz
+
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      if: ${{ github.ref == 'refs/heads/main' }}
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ${{ github.workspace }}/build
+        user_name: 'github-actions'
+        user_email: 'github-actions@users.noreply.github.com'
+        commit_message: ${{ github.event.head_commit.message }}
+        exclude_assets: '*/.doctrees,*/.buildinfo'
+
+  release:
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/download-artifact@v3
+        with:
+          path: ./release
+          name: "htmls-${{ github.sha }}"
+
+      - uses: ncipollo/release-action@v1
+        with:
+          artifacts: "./release/htmls.tar.gz"
+          token: ${{ secrets.GITHUB_TOKEN  }}
