@@ -28,14 +28,13 @@ jobs:
     - name: Build
       run: |
         make mhtml
-        tar -zcvf htmls.tar.gz build/**
+        find build -type d -name ".doctrees" | xargs rm -rf
+        find build -type f -name ".buildinfo" | xargs rm -rf
 
     - name: Upload artifact
-      uses: actions/upload-artifact@main
+      uses: actions/upload-pages-artifact@v1
       with:
-        name: github-pages
-        path: htmls.tar.gz
-        retention-days: '1'
+        path: 'build'
 
   deploy:
     needs: build
