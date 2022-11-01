@@ -15,3 +15,7 @@ pip3 install sphinx sphinx_multiversion sphinx_rtd_theme myst-parser
 make html # 构建当前版本文档
 make mhtml # 构建多版本文档
 ```
+
+### 预览
+
+[canmv_docs](https://kendryte.github.io/canmv_docs/main/index.html)
