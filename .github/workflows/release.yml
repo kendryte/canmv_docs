@@ -20,9 +20,11 @@ jobs:
 
     - name: Build
       run: |
+        git fetch --unshallow # fetch all history
         make mhtml
         find build -type d -name ".doctrees" | xargs rm -rf
         find build -type f -name ".buildinfo" | xargs rm -rf
+        find build -type f -name "objects.inv" | xargs rm -rf
         tar -zcvf htmls.tar.gz build/**
 
     - uses: ncipollo/release-action@v1

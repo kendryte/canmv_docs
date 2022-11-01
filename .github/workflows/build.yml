@@ -27,9 +27,11 @@ jobs:
 
     - name: Build
       run: |
+        git fetch --unshallow # fetch all history
         make mhtml
         find build -type d -name ".doctrees" | xargs rm -rf
         find build -type f -name ".buildinfo" | xargs rm -rf
+        find build -type f -name "objects.inv" | xargs rm -rf
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
