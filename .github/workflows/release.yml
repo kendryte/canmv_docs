@@ -27,7 +27,7 @@ jobs:
         make mhtml
         tar -zcvf htmls.tar.gz build/**
 
-      - uses: ncipollo/release-action@v1
-        with:
-          artifacts: "htmls.tar.gz"
-          token: ${{ secrets.GITHUB_TOKEN  }}
+    - uses: ncipollo/release-action@v1
+      with:
+      artifacts: "htmls.tar.gz"
+      token: ${{ secrets.GITHUB_TOKEN  }}
