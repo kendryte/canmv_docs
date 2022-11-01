@@ -8,6 +8,11 @@
     demo/index.rst
     library/index.rst
 
+.. toctree::
+    :maxdepth: 1
+
+    faq.md
+
 .. 目录
 ..     上手
 ..         IDE 安装
