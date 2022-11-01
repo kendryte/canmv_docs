@@ -25,9 +25,11 @@ jobs:
     - name: Build
       run: |
         make mhtml
+        find build -type d -name ".doctrees" | xargs rm -rf
+        find build -type f -name ".buildinfo" | xargs rm -rf
         tar -zcvf htmls.tar.gz build/**
 
     - uses: ncipollo/release-action@v1
       with:
-      artifacts: "htmls.tar.gz"
-      token: ${{ secrets.GITHUB_TOKEN  }}
+        artifacts: "htmls.tar.gz"
+        token: ${{ secrets.GITHUB_TOKEN  }}
