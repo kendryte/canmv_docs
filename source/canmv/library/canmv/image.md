@@ -1885,7 +1885,7 @@ Haar Cascade特征描述符用于 `image.find_features()` 方法。它没有供�
 class image.HaarCascade(path[, stages=Auto])
 ```
 
-从一个Haar Cascade二进制文件（适合OpenMV Cam的格式）加载一个Haar Cascade。 如果您传递“frontalface”字符串 而非一条路径，这个构造函数将会把一个内置的正脸Haar Cascade载入内存。 此外，您也可以通过“eye”来把Haar Cascade载入内存。 最后，这个方法会返回载入的Haar Cascade对象，用来使用 image.find_features() 。
+从一个Haar Cascade二进制文件（适合OpenMV Cam的格式）加载一个Haar Cascade。 如果您传递“frontalface”字符串 而非一条路径，这个构造函数将会把一个内置的正脸Haar Cascade载入内存。 此外，您也可以通过“eye”来把Haar Cascade载入内存。 最后，这个方法会返回载入的Haar Cascade对象，用来使用 image.find_features() 。
 
 stages 默认值为Haar Cascade中的阶段数。然而，您可以指定一个较低的数值来加速运行特征检测器，当然这会带来较高的误报率。
 
@@ -1897,7 +1897,7 @@ stages 默认值为Haar Cascade中的阶段数。然而，您可以指定一个�
 
 问：Haar Cascades 是如何制作而成的？
 
-答：Haar Cascades通过标有正负的图像对发生器算法进行训练。 比如，用数百张含有猫（已被标记为内含猫）的图片和数百张不含有猫形物的图片（已作出不同标记）来训练这个生成算法。 这个生成算法最后会产生一个用来检测猫的Haar Cascades。
+答：Haar Cascades通过标有正负的图像对发生器算法进行训练。 比如，用数百张含有猫（已被标记为内含猫）的图片和数百张不含有猫形物的图片（已作出不同标记）来训练这个生成算法。 这个生成算法最后会产生一个用来检测猫的Haar Cascades。
 
 ## 类 `Similarity`
 
