@@ -1,3 +1,4 @@
 build
 pyenv
 __pycache__
+.idea/
