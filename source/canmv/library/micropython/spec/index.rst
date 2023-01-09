@@ -20,3 +20,4 @@
     machine.Timer.md
     machine.WDT.md
     machine.PWM.md
+    network.WLAN.md
