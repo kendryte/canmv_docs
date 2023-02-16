@@ -186,25 +186,26 @@ r = kpu.get_outputs()
 result = kpu.Act.softmax(r)
 ```
 
-## 类 `Face`
+## 类 `Feat`
 
-`Face`是为人脸特征值计算与比对封装的类，请按需使用~
+`Feat`是为特征值计算与比对封装的类，请按需使用~
 
 ### 函数 `calculate`
 
 ```python
 kpu = KPU()
-kpu_result = kpu.get_outputs()
-feature = kpu.Face.calculate(kpu_result)
+img = sensor.snapshot()
+kpu.run(img)
+feature = kpu.Feat.calculate(kpu)
 ```
 
 #### 参数
 
-* `kpu_result`: `KPU`获取到的运行结果
+* `kpu`: `KPU` 类
 
 #### 返回值
 
-* `feature`: 计算得到的人脸特征值
+* `feature`: 计算得到的特征值
 
 #### 例子
 
@@ -214,20 +215,18 @@ kpu = KPU()
 kpu.load('/sd/xxx.kmodel')
 img = sensor.snapshot()
 kpu.run(img)
-r = kpu.get_outputs()
-feature = kpu.Face.calculate(r)
+feature = kpu.Feat.calculate(kpu)
 ```
-
 
 ### 函数 `compare`
 
 ```python
 kpu = KPU()
 kpu_result = kpu.get_outputs()
-feature1 = kpu.Face.calculate(kpu_result)
+feature1 = kpu.Feat.calculate(kpu_result)
 
 feature2 = [xxxxxx]
-score = kpu.Face.compare(feature1, feature2)
+score = kpu.Feat.compare(feature1, feature2)
 ```
 
 #### 参数
@@ -244,10 +243,10 @@ score = kpu.Face.compare(feature1, feature2)
 ```python
 kpu = KPU()
 kpu_result = kpu.get_outputs()
-feature1 = kpu.Face.calculate(kpu_result)
+feature1 = kpu.Feat.calculate(kpu_result)
 
 feature2 = [xxxxxx]
-score = kpu.Face.compare(feature1, feature2)
+score = kpu.Feat.compare(feature1, feature2)
 ```
 
 ## 类 `Yolo2`
