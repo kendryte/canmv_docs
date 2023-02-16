@@ -243,8 +243,8 @@
     53-Board/config_maix_dock.md
 
 
-`KPU` - 深度学习
-^^^^^^^^^^^^^^^^^^^
+`KPU` - 深度学习 (OLD)
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
     :maxdepth: 1

@@ -10,6 +10,7 @@ maix模块
     maix.FPIOA.md
     maix.GPIO.md
     maix.KPU.md
+    maix.KPU_NEW.md
     maix.FFT.md
     maix.I2S.md
     maix.freq.md

@@ -1,5 +1,7 @@
-maix.KPU
-=============
+maix.KPU - OLD
+===========================
+
+> 本文档接口定义与[V1.0.5](https://github.com/kendryte/canmv/releases/tag/v1.0.5)及其之前的固件对应，新版本固件请参考 [maix.KPU - NEW](./maix.KPU_NEW.md)
 
 KPU是通用的神经网络处理器，它可以在低功耗的情况下实现卷积神经网络计算，时时获取被检测目标的大小、坐标和种类，对人脸或者物体进行检测和分类。
 
@@ -237,5 +239,18 @@ KPU.sigmoid(f)
 
 * 浮点数
 
+#### `softmax`
 
+```python
+KPU.softmax(f)
+```
 
+激活函数`softmax`，计算最大值
+
+##### 参数
+
+* `f`: 浮点数数组
+
+##### 返回值
+
+* 浮点数数组
