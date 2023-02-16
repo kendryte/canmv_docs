@@ -6,6 +6,10 @@
     
     get-start/index.rst
     demo/index.rst
+
+.. toctree::
+    :maxdepth: 3
+
     library/index.rst
 
 .. toctree::
