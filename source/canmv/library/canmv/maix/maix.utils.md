@@ -45,3 +45,22 @@ maix.utils.heap_free()
 
 获取当前剩余的内存空间（非gc管理部分）
 
+#### `free_kpu_buffers`
+
+```python
+info = maix.utils.free_kpu_buffers()
+```
+
+释放所有`KPU`申请的内存，使用的时候，请注意是否会影响到正常的模型使用，建议在模型之前，或者在程序结束运行的时候使用
+
+> 固件版本在[V1.0.5](https://github.com/kendryte/canmv/releases/tag/v1.0.5)之的可使用本函数
+
+##### 参数
+
+* 无
+
+##### 返回值
+
+* `info`：包含释放内存信息的`dict`
+    - `count`: 释放的`buffer`数量
+    - `size`: 释放内存总大小
