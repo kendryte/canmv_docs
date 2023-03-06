@@ -84,14 +84,14 @@ kpu.run(img)
 ### 函数 `get_outputs`
 
 ```python
-result = kpu.get_outputs()
+result = kpu.get_outputs([index = 0])
 ```
 
 获取模型运行结果
 
 #### 参数
 
-* 无
+* index: 可选参数，指定获取第 `N` 个输出，从 `0` 开始
 
 #### 返回值
 
