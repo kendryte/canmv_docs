@@ -26,8 +26,8 @@ kpu = maix.KPU()
 ### 函数 `load`
 
 ```python
-kpu.load(model_path)    # string
-kpu.load(model_offset)  # int
+kpu.load(model_path, [size])    # string, int
+kpu.load(model_offset, [size])  # int, int
 ```
 
 从文件系统或者`Flash`加载模型
@@ -44,6 +44,8 @@ kpu.load(model_offset)  # int
 
 * `model_offset`: 模型在 `Flash` 中的偏移，如 `0xd00000` 表示模型烧录在 `13M` 起始的地方, `0x300000` 表示模型烧录在 `3M` 起始的地方
 
+* `size`: 可选参数，模型文件大小，从 `Flash` 加载 `V5` 模型时，必须传本参数
+
 #### 返回值
 
 * 无
@@ -54,7 +56,7 @@ kpu.load(model_offset)  # int
 from maix import KPU
 kpu = KPU()
 ## kpu.load(0x300000)
-kpu.load("/sd/xxx.kmodel")
+kpu.load("/sd/xxx.kmodel",[size])
 ```
 
 ### 函数 `run`
