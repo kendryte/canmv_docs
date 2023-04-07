@@ -16,3 +16,4 @@ maix模块
     maix.freq.md
     maix.utils.md
     maix.config.md
+    maix.mic_array.md
