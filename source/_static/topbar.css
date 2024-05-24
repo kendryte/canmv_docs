@@ -1,13 +1,18 @@
 /* Customize for top bar (testing and outdated docs)*/
 
+:target {
+    scroll-margin-top: 50px;
+}
+
 .wy-nav-side
 {
-    margin-top: 47px !important;
+    min-height: calc(100% - 50px);
+    top: 50px;
 }
 
 .wy-nav-content-wrap
 {
-    margin-top: 47px !important;
+    margin-top: 50px !important;
 }
 
 /* The navigation bar */
@@ -24,16 +29,11 @@ nav.navbar {
 nav.navbar a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: rgba(255,255,255,0.5);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
-
-/* Change background on mouse-over */
-nav.navbar a:hover {
-    background: #ddd;
-    color: black;
+    text-wrap: nowrap;
 }
 
 .jn_container-view {
@@ -43,7 +43,7 @@ nav.navbar a:hover {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 1501
+    z-index: 1501;
 }
 
 .jn_menu-container {
@@ -60,20 +60,44 @@ nav.navbar a:hover {
     width: 157px;
     height: 28px;
     background: url(img/logo.2f7049e2.svg) no-repeat 100%;
-    background-size: auto 100%
+    background-size: auto 100%;
 }
 
 .jn_menu-container .menu-list {
     display: flex;
+    height: 100%;
     font-size: 16px;
-    color: hsla(0, 0%, 100%, .4);
-    margin-left: 125px
+    color: rgba(255,255,255,0.4);
+    margin-left: 78px;
+    max-width: 506px;
 }
 
-.jn_menu-container .menu-item {
-    margin-right: 40px;
+.menu-list .menu-item {
+    margin-right: 30px;
     height: 100%;
-    cursor: pointer
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        display: none;
+    }
+
+    .menu-list .menu-item {
+        margin-right: 0;
+    }
+
+    .jn_menu-container .menu-list {
+        margin-left: 0;
+        justify-content: space-around;
+        flex-grow: 1;
+    }
+
+    nav.navbar a {
+        padding: 3px;
+    }
 }
 
 .jn_menu-container .menu-item.active a {
@@ -85,7 +109,7 @@ nav.navbar a:hover {
 }
 
 .jn_menu-container .active,
-.jn_menu-container .menu-item:hover {
+.jn_menu-container .menu-item a:hover {
     color: #fff
 }
 
@@ -105,4 +129,49 @@ nav.navbar a:hover {
     background-size: auto 70%;
     display: block;
     cursor: pointer
+}
+
+.menu-doc a {
+    color: #f2f2f2 !important;
+}
+
+.model-list {
+    position: absolute;
+    top: 50px;
+    background: #0d0d0d;
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.menu-doc:hover > .model-list {
+    display: flex;
+    align-items: center;
+}
+
+.document-select {
+    padding: 10px !important;
+    color: #fff;
+    text-align: start !important;
+    text-wrap: wrap !important;
+}
+
+.document-select:hover {
+    background-color: #249ee8 !important;
+}
+
+.expanded-menu {
+    position: relative;
+}
+.expanded-menu-container {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: -120px;
+    width: 120px;
+    background-color: #0d0d0d;
+}
+.expanded-menu:hover .expanded-menu-container {
+    display: flex;
 }
