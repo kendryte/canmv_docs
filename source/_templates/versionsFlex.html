@@ -1,12 +1,10 @@
 <style>
   .rst-versions {
-      position: fixed;
-      bottom: 0px;
-      left: 0;
       color: #100e0e;
       background: #eaebec;
       font-family: Lato, proxima-nova, Helvetica Neue, Arial, sans-serif;
       z-index: 400;
+      width: 100%;
   }
   .rst-versions.shift-up {
       height: auto;
@@ -97,16 +95,6 @@
   </div>
   {%- endif %}
   <script>
-     var bdconLeft = document.querySelector('.bd-container__inner').offsetLeft;
-      var parentWidth = document.querySelector('.bd-sidebar').offsetWidth;
-    document.querySelector('.rst-versions').style.width = parentWidth + 'px';
-    document.querySelector('.rst-versions').style.left = bdconLeft + 'px';
-    window.addEventListener('resize', function() {
-      var bdconLeft = document.querySelector('.bd-container__inner').offsetLeft;
-      var parentWidth = document.querySelector('.bd-sidebar').offsetWidth;
-    document.querySelector('.rst-versions').style.width = parentWidth + 'px';
-    document.querySelector('.rst-versions').style.left = bdconLeft + 'px';
-  });
     document.querySelector('.rst-versions').addEventListener('click', function() {
           var details = document.querySelector('.rst-versions');
           details.classList.toggle('shift-up');
