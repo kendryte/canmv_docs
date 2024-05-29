@@ -69,8 +69,7 @@ html_theme_options = {
     "repository_url": "https://github.com/kendryte/canmv_docs",
     'collapse_navigation': True,
     'navigation_depth': 7,
-    "use_edit_page_button": True,
-    "use_edit_page_button": True,
     "show_navbar_depth": 2,
+    "use_repository_button": True,
     "primary_sidebar_end": ["versionsFlex.html"],
 }
