@@ -23,7 +23,7 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Install Requirements.
-      run: pip3 install sphinx==5.3.0 sphinx_multiversion sphinx_book_theme sphinxcontrib-mermaid myst-parser
+      run: pip3 install sphinx==5.3.0 sphinx_multiversion sphinx_book_theme sphinx_copybutton sphinxcontrib-mermaid myst-parser 
 
     - name: Build
       run: |
