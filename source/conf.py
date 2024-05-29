@@ -58,17 +58,19 @@ html_favicon = 'favicon.ico'
 # html_theme = 'alabaster'
 html_theme = "sphinx_book_theme"
 html_static_path = ['_static']
-html_sidebars = {
-    '**':['navbar-logo.html','search-field.html','sbt-sidebar-nav.html', 'versions.html'],
-}
 html_copy_source = True
 html_show_sourcelink = False
 
 # if want to add top nav for canann, enable this.
 # html_css_files = ['topbar.css']
-html_css_files = ['topbar.css', 'custom.css']
+html_css_files = ['topbar.css', 'custom-theme.css']
 
 html_theme_options = {
+    "repository_url": "https://github.com/kendryte/canmv_docs",
     'collapse_navigation': True,
     'navigation_depth': 7,
+    "use_edit_page_button": True,
+    "use_edit_page_button": True,
+    "show_navbar_depth": 2,
+    "primary_sidebar_end": ["versionsFlex.html"],
 }
