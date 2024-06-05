@@ -49,9 +49,18 @@ nav.bd-links li>a:active, .logo__title:hover, nav.bd-links li>a:hover {
   cite {
     font-style: normal;
   }
-  body {
+  .bd-sidebar {
+    counter-reset: toctree-l2counter;
+  }
+  .bd-article-container {
+    counter-reset: h2counter;
+  }
+  .bd-toc {
+    counter-reset: toc-h2counter;
+  }
+  /* body {
     counter-reset: h2counter toc-h2counter toctree-l2counter;
-}
+} */
 
 h2 {
     counter-reset: h3counter;
@@ -149,22 +158,22 @@ h6::before {
     counter-reset: toctree-l5counter;
 }
 
-.toctree-l2 > a::before {
+.bd-sidebar .toctree-l2 > a::before {
     counter-increment: toctree-l2counter;
     content: counter(toctree-l2counter) ". ";
 }
 
-.toctree-l3 > a::before {
+.bd-sidebar .toctree-l3 > a::before {
     counter-increment: toctree-l3counter;
     content: counter(toctree-l2counter) "." counter(toctree-l3counter) " ";
 }
 
-.toctree-l4 > a::before {
+.bd-sidebar .toctree-l4 > a::before {
     counter-increment: toctree-l4counter;
     content: counter(toctree-l2counter) "." counter(toctree-l3counter) "." counter(toctree-l4counter) " ";
 }
 
-.toctree-l5 > a::before {
+.bd-sidebar .toctree-l5 > a::before {
     counter-increment: toctree-l5counter;
     content: counter(toctree-l2counter) "." counter(toctree-l3counter) "." counter(toctree-l4counter) "." counter(toctree-l5counter) " ";
 }
