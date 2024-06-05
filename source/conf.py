@@ -10,7 +10,7 @@ sys.path.append(os.path.abspath('exts'))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'CanMV'
+project = 'K210 CanMV'
 copyright = '2022 Canaan Inc'
 author = 'Canaan'
 # release = '0.1'
