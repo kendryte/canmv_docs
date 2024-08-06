@@ -36,6 +36,7 @@ source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown',
 }
+html_title = "K210 CanMV"
 
 templates_path = ['_templates']
 exclude_patterns = []
