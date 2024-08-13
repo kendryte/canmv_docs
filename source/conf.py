@@ -11,7 +11,7 @@ sys.path.append(os.path.abspath('exts'))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'K210 CanMV'
-copyright = '2022 Canaan Inc'
+copyright = '2024 Canaan Inc'
 author = 'Canaan'
 # release = '0.1'
 
@@ -65,7 +65,6 @@ html_show_sourcelink = False
 # if want to add top nav for canann, enable this.
 # html_css_files = ['topbar.css']
 html_css_files = ['topbar.css', 'custom-theme.css']
-
 html_theme_options = {
     "repository_url": "https://github.com/kendryte/canmv_docs",
     'collapse_navigation': True,
@@ -73,4 +72,8 @@ html_theme_options = {
     "show_navbar_depth": 2,
     "use_repository_button": True,
     "primary_sidebar_end": ["versionsFlex.html"],
+    "footer_start": ["Fleft.html"],
+    "footer_center": ["Footer.html"],
+    "footer_end" : ["Fright.html"],
+    "content_footer_items": '',
 }
