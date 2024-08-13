@@ -75,5 +75,4 @@ html_theme_options = {
     "footer_start": ["Fleft.html"],
     "footer_center": ["Footer.html"],
     "footer_end" : ["Fright.html"],
-    "content_footer_items": '',
 }

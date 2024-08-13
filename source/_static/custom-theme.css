@@ -56,6 +56,12 @@ cite {
 .bd-footer {
   background-color: #303846;
 }
+.bd-footer .footer-items__end {
+  text-align: left;
+}
+.bd-footer .footer-items__center {
+  text-align: left;
+}
 .bd-sidebar {
   counter-reset: toctree-l2counter;
 }
