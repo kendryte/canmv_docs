@@ -53,6 +53,9 @@ html[data-theme="light"] {
 cite {
   font-style: normal;
 }
+.bd-footer .footer-items__center, .bd-footer .footer-items__end, .bd-footer .footer-items__start {
+  justify-content: flex-start;
+}
 .bd-footer {
   background-color: #303846;
 }
