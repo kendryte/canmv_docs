@@ -12,7 +12,7 @@ sys.path.append(os.path.abspath('exts'))
 
 project = 'K210 CanMV'
 copyright = '2024 Canaan Inc'
-author = 'Canaan'
+# author = 'Canaan'
 # release = '0.1'
 
 # -- General configuration ---------------------------------------------------
@@ -71,3 +71,7 @@ html_theme_options = {
     "footer_center": ["Footer.html"],
     "footer_end" : ["Fright.html"],
 }
+if language == 'en':
+    html_theme_options["footer_start"] = ["FleftEn.html"]
+    html_theme_options["footer_center"] = ["FooterEn.html"]
+    html_theme_options["footer_end"] = ["FrightEn.html"]
