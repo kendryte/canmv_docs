@@ -18,4 +18,4 @@ make mhtml # 构建多版本文档
 
 ### 在线查看
 
-可通过[canaan-creative.com](https://developer.canaan-creative.com/index.html?channel=developer#/document/canmv)查看本文档，也可访问[github-pages](https://kendryte.github.io/canmv_docs/main/index.html)
+可通过[canaan-creative.com](https://www.kendryte.com/index.html?channel=developer#/document/canmv)查看本文档，也可访问[github-pages](https://kendryte.github.io/canmv_docs/main/index.html)
