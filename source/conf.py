@@ -60,6 +60,11 @@ html_show_sourcelink = False
 # if want to add top nav for canann, enable this.
 # html_css_files = ['topbar.css']
 html_css_files = ['topbar.css', 'custom-theme.css','auto-nums.css']
+
+html_js_files = [
+    'transform.js'
+]
+
 html_theme_options = {
     "repository_url": "https://github.com/kendryte/canmv_docs",
     'collapse_navigation': True,
