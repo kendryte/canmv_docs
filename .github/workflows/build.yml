@@ -4,13 +4,11 @@ on:
   push:
     branches: [ "main" ]
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -20,14 +18,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+
+    # 固定 Python 版本，避免高版本 Python 移除 imghdr 导致 sphinx 5.x 的 epub3 扩展加载失败
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: 'pip'
 
     - name: Install Requirements.
-      run: pip3 install sphinx==5.3.0 sphinx_multiversion sphinx_book_theme sphinx_copybutton sphinxcontrib-mermaid myst-parser
+      run: python -m pip install --upgrade pip && python -m pip install sphinx==5.3.0 sphinx_multiversion sphinx_book_theme sphinx_copybutton sphinxcontrib-mermaid myst-parser
 
     - name: Build
       run: |
-        git fetch --unshallow # fetch all history
+        git fetch --unshallow
         make mhtml
         find build -type d -name ".doctrees" | xargs rm -rf
         find build -type f -name ".buildinfo" | xargs rm -rf
@@ -40,7 +45,6 @@ jobs:
 
   deploy:
     needs: build
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}/main
@@ -49,4 +53,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
