@@ -4,13 +4,11 @@ on:
   push:
     branches: [ "main" ]
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: write
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -22,12 +20,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    # 新增：固定 Python 版本，避免 imghdr 缺失问题
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
     - name: Install Requirements.
       run: pip3 install sphinx==5.3.0 sphinx_multiversion sphinx_book_theme sphinx_copybutton sphinxcontrib-mermaid myst-parser
 
     - name: Build
       run: |
-        git fetch --unshallow # fetch all history
+        git fetch --unshallow
         make mhtml
         find build -type d -name ".doctrees" | xargs rm -rf
         find build -type f -name ".buildinfo" | xargs rm -rf
@@ -40,7 +44,6 @@ jobs:
 
   deploy:
     needs: build
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}/main
